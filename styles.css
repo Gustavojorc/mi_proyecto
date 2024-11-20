@@ -1,0 +1,132 @@
+/* Colores Principales */
+:root {
+    --primary-color: #007BFF; /* Azul */
+    --secondary-color: #28a745; /* Verde */
+    --hover-primary: #0056b3;
+    --hover-secondary: #218838;
+}
+
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header img {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: auto;
+}
+
+header h1 {
+    margin: 10px 0;
+    font-size: 2em;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.boton-pestana, .cta-button {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+.boton-pestana {
+    background-color: var(--primary-color);
+}
+
+.boton-pestana:hover {
+    background-color: var(--hover-primary);
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+}
+
+.cta-button:hover {
+    background-color: var(--hover-secondary);
+}
+
+.contenido-pestaña {
+    display: none;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+}
+
+.contenido-pestaña.activo {
+    display: block;
+}
+
+.acerca h2,
+.info-adicional h2 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.acerca p,
+.acerca ul,
+.info-adicional p {
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.acerca .section-title {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.acerca .section-content {
+    margin-bottom: 20px;
+}
+
+.acerca ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.acerca ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+

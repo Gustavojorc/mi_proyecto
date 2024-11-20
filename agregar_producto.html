@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <?php session_start(); ?>
+    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
+        <h2>Agregar Producto</h2>
+        <form id="form-producto" action="agregar_producto.php" method="post">
+            <label for="nombre">Nombre del producto:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" required></textarea>
+            
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" step="0.01" required>
+            
+            <button type="submit">Guardar Producto</button>
+        </form>
+    <?php else: ?>
+        <p>No tienes permiso para agregar productos.</p>
+    <?php endif; ?>
+</body>
+</html>
