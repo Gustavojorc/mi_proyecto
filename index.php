@@ -43,6 +43,7 @@ session_start();
         
         <div class="section-content">
             <h3 class="section-title">Nuestra Misión</h3>
+
             <p>Facilitar el acceso a refacciones confiables y de calidad, apoyando tanto a empresas como a particulares en la optimización de sus operaciones de transporte y logística.</p>
         </div>
         
@@ -67,6 +68,7 @@ session_start();
             <p>¿Tienes dudas o necesitas una cotización? Escríbenos a <a href="mailto:contacto@refaccionariaduran.com">contacto@refaccionariaduran.com</a> o llama al (999) 123-4567.</p>
         </div>
     </div>
+    <script src="script.js"></script>
 
     <!-- Esta sección sólo se muestra si el usuario es administrador -->
     <?php
@@ -87,7 +89,7 @@ session_start();
                 <button type="submit" class="btn btn-register">Guardar Producto</button>
             </form>
         </div>
-        ';
+        ';   
     }
     ?>
 

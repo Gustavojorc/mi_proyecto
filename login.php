@@ -34,34 +34,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("s", $correo);
         $stmt->execute();
         $stmt->store_result();
-        $stmt->bind_result($idusuario, $hash_contraseña, $rol);
-        $stmt->fetch();
 
-        // Verificar contraseña y sesión
-        if ($stmt->num_rows > 0 && password_verify($contraseña, $hash_contraseña)) {
-            $_SESSION['idusuario'] = $idusuario;
-            $_SESSION['rol'] = $rol;
-            $_SESSION['correo'] = $correo;
+        // Verifica si hay resultados
+        if ($stmt->num_rows > 0) {
+            $stmt->bind_result($idusuario, $hash_contraseña, $rol);
+            $stmt->fetch();
 
-            // Redirigir según rol
-            if ($rol === 'admin') {
-                header("Location: agregar_producto.php");
+            // Verificar contraseña
+            if (password_verify($contraseña, $hash_contraseña)) {
+                // Inicia sesión
+                $_SESSION['idusuario'] = $idusuario;
+                $_SESSION['rol'] = $rol;
+                $_SESSION['correo'] = $correo;
+
+                // Redirigir según rol
+                if ($rol === 'admin') {
+                    header("Location: agregar_producto.php");
+                } else {
+                    header("Location: ver_productos.php");
+                }
+                exit();
             } else {
-                header("Location: ver_productos.php");
+                echo "Contraseña incorrecta.";
             }
-            exit();
         } else {
-            // Mensaje genérico
-            echo "Credenciales inválidas.";
+            echo "Usuario no encontrado.";
         }
         $stmt->close();
     } else {
         echo "Error en la consulta. Intente más tarde.";
     }
 }
-
-echo password_hash('admin123', PASSWORD_BCRYPT);
-
 
 // Cerrar la conexión
 $conn->close();

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssss", $nombre, $correo, $contraseña, $rol);
 
     if ($stmt->execute()) {
-        echo "Registro exitoso. Puedes <a href='login.php'>iniciar sesión</a> ahora.";
+        echo "Registro exitoso. Puedes <a href='login.html'>iniciar sesión</a> ahora.";
     } else {
         echo "Error en el registro: " . $stmt->error;
     }

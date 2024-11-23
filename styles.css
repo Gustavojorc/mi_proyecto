@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background: linear-gradient(90deg, #333, #555);
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -26,6 +26,11 @@ header img {
     margin: 0 auto;
     width: 150px;
     height: auto;
+    transition: transform 0.3s;
+}
+
+header img:hover {
+    transform: scale(1.1);
 }
 
 header h1 {
@@ -80,7 +85,7 @@ header h1 {
 }
 
 .contenido-pestaña.activo {
-    display: block;
+    border: 2px solid var(--primary-color);
 }
 
 .acerca h2,
@@ -128,5 +133,58 @@ footer {
 
 footer p {
     margin: 0;
+}
+.contenedor-pestanas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+}
+
+.btn-login:hover {
+    background-color: var(--hover-primary);
+}
+
+.btn-register {
+    background-color: var(--secondary-color);
+}
+
+.btn-register:hover {
+    background-color: var(--hover-secondary);
+}
+
+#contacto {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+
+#contacto a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#contacto a:hover {
+    text-decoration: underline;
 }
 
